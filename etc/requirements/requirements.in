@@ -1,6 +1,7 @@
 requests
 setuptools>=18.0
 pip-tools
+pytest
 
 numpy
 scikit-learn
