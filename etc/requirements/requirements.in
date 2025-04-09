@@ -18,3 +18,7 @@ plotly
 jupyter
 jupyterlab
 jupyter-book
+
+biopython
+vcfpy
+pysam
