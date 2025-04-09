@@ -1,5 +1,6 @@
 import os
 from setuptools import setup, find_packages
+import numpy
 
 # Read requirements from the existing pinned requirements file
 requirements_path = os.path.join('etc', 'requirements', 'requirements.txt')
@@ -11,22 +12,15 @@ with open(requirements_path) as f:
 setup(
     name="platipath",
     version="0.1.0",
-    packages=find_packages(where='src'),
-    package_dir={'': 'src'},
+    packages=find_packages(),
     install_requires=requirements,
-    # Add any additional dependencies specific to this project that aren't in the requirements.txt
-    # For example, bioinformatics-specific packages
-    extras_require={
-        'bio': [
-            'biopython',  # For biological sequence handling
-            'pyvcf',      # For VCF file handling
-            'pysam',      # For SAM/BAM file handling
-        ],
-    },
     author="Omid Shams Solari",
     author_email="solari@berkeley.edu",
     description="A package for analyzing somatic mutations correlated with platinum-based treatment outcomes",
     keywords="bioinformatics, genomics, somatic mutations, platinum treatment",
     python_requires=">=3.8",
+    tests_require=["pytest"],
+    include_package_data=True,
+    include_dirs=[numpy.get_include()],
 )
 

@@ -38,6 +38,6 @@ pip install -r "$REQUIREMENTS_FILE"
 
 # Install the package in development mode
 echo "Installing package in development mode..."
-python -m pip install --editable ../../
+python -m pip install --editable .
 
 echo "Environment setup complete!"

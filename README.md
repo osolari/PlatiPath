@@ -1,1 +1,1 @@
-# PlatyPath
+# PlatiPath
